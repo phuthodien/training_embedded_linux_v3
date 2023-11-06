@@ -1,0 +1,43 @@
+diff --git a/arch/arm/boot/dts/am335x-boneblack.dts b/arch/arm/boot/dts/am335x-boneblack.dts
+index cb9cee378870..44959c0b9a9f 100644
+--- a/arch/arm/boot/dts/am335x-boneblack.dts
++++ b/arch/arm/boot/dts/am335x-boneblack.dts
+@@ -16,6 +16,30 @@
+ 		base_dtb = "am335x-boneblack.dts";
+ 		base_dtb_timestamp = __TIMESTAMP__;
+ 	};
++
++	sample_led0@44E07000 {
++		compatible = "led-example0";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		reg = <0x44E07000 0x1000>;
++		status = "okay";
++	};
++
++	sample_led1@4804C000 {
++		compatible = "led-example1";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		reg = <0x4804C000 0x1000>;
++		status = "okay";
++	};
++
++	my_watchdog@44e35000 {
++		compatible = "omap,my_watchdog";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		reg = <0x44e35000 0x1000>;
++		status = "okay";
++	};
+ };
+ 
+ &cpu0_opp_table {
+@@ -172,3 +196,7 @@
+ 		"NC",
+ 		"NC";
+ };
++
++&wdt2 {
++	status = "disabled";
++};

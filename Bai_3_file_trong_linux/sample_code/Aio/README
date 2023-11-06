@@ -1,0 +1,4 @@
+Create a text file with at least 100 characters.
+Set name for it is: test_aoi.txt
+Put text file in same working directory with executable file.
+Add option -lrt when build source code
